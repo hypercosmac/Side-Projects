@@ -1,6 +1,6 @@
 # 🤖 ML & Robotics Playground
 
-> A collection of machine learning experiments focused on robotics and autonomous systems. Currently featuring an end-to-end RC car that learns to drive from human demonstrations!
+> A collection of machine learning experiments focused on robotics and autonomous systems. Currently featuring [Zaptrack](https://zaptrack.us) that learns to drive from human demonstrations!
 
 ## Zaptrack Navigation Project
 

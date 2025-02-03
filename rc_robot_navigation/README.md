@@ -1,6 +1,6 @@
 # Remote Controlled Robot Navigation
 
-An end-to-end deep learning project for autonomous RC car navigation using behavioral cloning. The system learns to map raw camera inputs directly to steering and throttle controls by mimicking human driving behavior.
+An end-to-end deep learning project for autonomous RC robot navigation using behavioral cloning. The system learns to map raw camera inputs directly to steering and throttle controls by mimicking human driving behavior.
 
 ## Architecture Overview
 
@@ -13,7 +13,7 @@ An end-to-end deep learning project for autonomous RC car navigation using behav
 ### Data Pipeline
 - Input: 66x200 RGB images from car's perspective
 - Output: Normalized control values [-1,1]
-- Real-time inference at 30+ FPS on GPU
+- Real-time inference at 30+ FPS
 
 ### Key Features
 - End-to-end behavioral cloning
@@ -23,18 +23,19 @@ An end-to-end deep learning project for autonomous RC car navigation using behav
 - Dropout layers for regularization
 
 ## Model Architecture Details
-python
-CNN Layers:
-Conv2d(3, 24, 5, stride=2) → BatchNorm2d
-Conv2d(24, 36, 5, stride=2) → BatchNorm2d
-Conv2d(36, 48, 5, stride=2) → BatchNorm2d
-Conv2d(48, 64, 3) → BatchNorm2d
-Conv2d(64, 64, 3) → BatchNorm2d
-FC Layers:
-Linear(1152, 100) → ReLU → Dropout(0.5)
-Linear(100, 50) → ReLU → Dropout(0.5)
-Linear(50, 10) → ReLU
-Linear(10, 2) → Tanh
+
+### Convolutional Layers (CNN)
+1. Conv2d(3, 24, 5, stride=2) → BatchNorm2d
+2. Conv2d(24, 36, 5, stride=2) → BatchNorm2d
+3. Conv2d(36, 48, 5, stride=2) → BatchNorm2d
+4. Conv2d(48, 64, 3) → BatchNorm2d
+5. Conv2d(64, 64, 3) → BatchNorm2d
+
+### Fully Connected Layers (FC)
+1. Linear(1152, 100) → ReLU → Dropout(0.5)
+2. Linear(100, 50) → ReLU → Dropout(0.5)
+3. Linear(50, 10) → ReLU
+4. Linear(10, 2) → Tanh
 
 ## Usage
 1. Train model with collected driving data
@@ -47,7 +48,6 @@ Linear(10, 2) → Tanh
 - NumPy
 - Matplotlib
 - PIL
-
 
 ## Acknowledgments
 - NVIDIA's End-to-End Deep Learning for Self-Driving Cars paper
