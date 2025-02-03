@@ -1,6 +1,8 @@
 # Remote Controlled Robot Navigation
 
-An end-to-end deep learning project for autonomous RC robot navigation using behavioral cloning. The system learns to map raw camera inputs directly to steering and throttle controls by mimicking human driving behavior.
+![Image](Image.png)
+
+A quick deep learning project for autonomous RC robot navigation using behavioral cloning. The system learns to map raw camera inputs directly to steering and throttle controls by mimicking human driving behavior.
 
 ## Architecture Overview
 
@@ -38,7 +40,7 @@ An end-to-end deep learning project for autonomous RC robot navigation using beh
 4. Linear(10, 2) → Tanh
 
 ## Usage
-1. Train model with collected driving data
+1. Train model with collected driving data in Colab with `rc_robot_train.ipynb`
 2. Run inference on images: `python rc_robot_inference_v2.py`
 3. Process videos: `python rc_robot_video_inference.py`
 
